@@ -13,7 +13,7 @@ Puedes ver el sitio en vivo aquí: [Website Insurezella](https://web-insurezella
 
 
 ![Captura 2](https://github.com/user-attachments/assets/866357e5-993b-4eaf-912a-b840411c658c)
-Formato responsive
+
 ---
 
 ## ✨ Características
