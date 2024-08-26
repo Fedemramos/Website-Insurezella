@@ -1,0 +1,64 @@
+---
+export interface Props {
+  title: string;
+  imgSrc: string;
+  imgAlt: string;
+}
+
+const { title, imgSrc, imgAlt } = Astro.props;
+---
+
+<div class="insurance-card">
+  <div class="insurance-card__image">
+    <img src={imgSrc} alt={imgAlt} />
+  </div>
+  <h2 class="insurance-card__title">{title}</h2>
+</div>
+
+<style>
+.insurance-card {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 3rem;
+  width: 16rem;
+}
+
+.insurance-card__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.insurance-card__image img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+}
+
+.insurance-card__title {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 2.5rem;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 640px) {
+  .insurance-card {
+    padding: 1.5rem;
+    width: 12rem;
+  }
+
+  .insurance-card__image img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .insurance-card__title {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+</style>

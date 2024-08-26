@@ -1,0 +1,149 @@
+---
+// Importa el archivo CSS específico para este componente
+import '../styles/styles.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  mainImageSrc: string;
+  mainImageAlt: string;
+  
+}
+
+const {
+  title,
+  description,
+  buttonText,
+  buttonLink,
+  mainImageSrc,
+  mainImageAlt,
+} = Astro.props;
+
+---
+
+<section class="p-12">
+  <div class="container mx-auto flex justify-center">
+    <!-- Card Container -->
+    <div class="overflow-hidden w-full lg:w-3/4">
+      <div class="flex">
+        <!-- Image Section -->
+        <div class="w-1/2 p-6">
+          <img src={mainImageSrc} alt={mainImageAlt} class="custom-image w-full h-auto"/>
+        </div>
+        <!-- Text Section -->
+        <div class="w-1/2 p-12 px-14 text-section">
+          <h2 class="text-3xl font-bold mb-8">
+              {title}
+          </h2>
+          <p class="text-gray-400 font-semibold mb-6">
+              {description}
+          </p>
+          <a href={buttonLink}>
+            <button class="bg-blue-600 text-white px-8 py-1 rounded-full hover:bg-blue-800">
+                {buttonText}
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+ /* Estilo base para contenedor de la tarjeta */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Imagen y texto */
+.w-1/2 {
+  width: 50%;
+}
+
+.p-6 {
+  padding: 2rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.custom-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 1023px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .w-1/2 {
+    width: 100%;
+  }
+
+  .p-6 {
+    padding:0;
+  }
+
+  .p-12 {
+    padding: 2px;
+  }
+
+  .px-16 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .custom-image {
+    margin-bottom: 1rem;
+    position: relative;
+    left: -30%;
+  }
+
+  .text-section {
+    width: 60%;
+    text-align: left;
+    margin-left: 30%;
+  }
+
+  /* Ajustes de tamaño de texto en pantallas pequeñas */
+  .text-section h2 {
+    font-size: 10px; /* Tamaño reducido para el título */
+    
+  }
+
+  .text-section p {
+    font-size: 10px; /* Tamaño reducido para la descripción */
+  }
+
+  .text-section button {
+    font-size: 0.4rem; /* Tamaño reducido para el texto del botón */
+    padding: 10px 10px; /* Ajustar el padding del botón para pantallas pequeñas */
+    margin-bottom: 12px;
+  }
+}
+
+
+</style>
+

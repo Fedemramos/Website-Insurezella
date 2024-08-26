@@ -1,0 +1,12 @@
+.custom-image {
+  width: 400px;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .custom-image {
+    width: 400px;
+    margin-left: 10%;
+  }
+}
+

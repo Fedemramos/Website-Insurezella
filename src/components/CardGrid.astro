@@ -1,0 +1,60 @@
+---
+import TransparentCard from '../components/TransparentCard.astro';
+
+const cards = [
+  {
+    iconSrc: '/public/Assets/health-insurance-icon.png',
+    title: 'Health Insurance',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+  {
+    iconSrc: '/public/Assets/medicare-icon.png',
+    title: 'Medicare Supplement',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+  {
+    iconSrc: '/public/Assets/life-insurance-icon.png',
+    title: 'Life Insurance',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+  {
+    iconSrc: '/public/Assets/medicare-advantage-icon.png',
+    title: 'Medicare Advantage',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+  {
+    iconSrc: '/public/Assets/obamacare-icon.png',
+    title: 'ACA / Obamacare',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+  {
+    iconSrc: '/public/Assets/short-term-icon.png',
+    title: 'Short-Term Medical',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulumras venenatis.",
+  },
+];
+---
+
+<div class="bg-blue-100 mb-10">
+  <h2 class="text-3xl font-bold text-center p-12">Pick the insurance that suits your needs.</h2>
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+    {cards.map((card) => (
+      <TransparentCard
+        iconSrc={card.iconSrc}
+        title={card.title}
+        description={card.description}
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+  @media (max-width: 700px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas para anchos de 700px o menos */
+    }
+
+    
+  }
+</style>
+

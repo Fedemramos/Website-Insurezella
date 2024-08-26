@@ -1,0 +1,73 @@
+---
+export interface Props {
+  iconSrc: string;
+  title: string;
+  description: string;
+}
+
+const { iconSrc, title, description } = Astro.props;
+---
+
+<div class="bg-transparent p-6 text-center rounded-lg icon-container">
+  <img src={iconSrc} alt={title} class="w-14 h-14 mx-auto mb-4 md:mb-2" />
+  <h2 class="text-xl font-semibold text-blue-600">{title}</h2>
+  <p class="text-gray-400 font-semibold mt-2 mb-8">{description}</p>
+</div>
+
+<style>
+  /* Estilo general para separaciones y anchos */
+.icon-container {
+  padding: 16px; /* Padding general */
+  text-align: center;
+  border-radius: 12px; /* Borde redondeado */
+}
+
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+  .icon-container {
+    padding: 12px; /* Menor padding */
+    
+  }
+
+  .icon-container img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px; /* Menor espacio entre el icono y el título */
+  }
+
+  .icon-container h2 {
+    font-size: 18px;
+    margin-bottom: 6px; /* Menor espacio entre el título y la descripción */
+  }
+
+  .icon-container p {
+    font-size: 14px;
+    max-width: 260px; /* Reducir ancho máximo del texto */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+  .icon-container {
+    padding: 0px; /* Padding aún más pequeño */
+  }
+
+  .icon-container img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0px; /* Menor espacio entre el icono y el título */
+  }
+
+  .icon-container h2 {
+    font-size: 14px;
+    margin-bottom: 1px; /* Menor espacio entre el título y la descripción */
+  }
+
+  .icon-container p {
+    font-size: 10px;
+    max-width: 200px; /* Reducir más el ancho máximo del texto */
+  }
+}
+
+</style>

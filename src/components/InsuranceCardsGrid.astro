@@ -1,0 +1,65 @@
+---
+import InsuranceCard from './InsuranceCards.astro';
+---
+<!-- Contenedor para InsuranceCard con diseño responsivo -->
+<div class="py-12">
+    <!-- Diseño para pantallas grandes (PC) -->
+    <div class="hidden lg:flex flex-wrap justify-center gap-4">
+      <InsuranceCard 
+        title="Health insurance" 
+        imgSrc="/public/Assets/medicare-icon.png" 
+        imgAlt="Seguro de Auto" 
+      />
+      <InsuranceCard 
+        title="Medicare supplement" 
+        imgSrc="/public/Assets/medicare-advantage-icon.png" 
+        imgAlt="Seguro de Hogar" 
+      />
+      <InsuranceCard 
+        title="Medicare Advantage" 
+        imgSrc="/public/Assets/medicare-icon.png" 
+        imgAlt="Seguro de Vida" 
+      />
+      <InsuranceCard 
+        title="Life insurance" 
+        imgSrc="/public/Assets/life-insurance-icon.png" 
+        imgAlt="Seguro de Salud" 
+      />
+      <InsuranceCard 
+        title="ACA obamacare" 
+        imgSrc="/public/Assets/obamacare-icon.png" 
+        imgAlt="Seguro de Viaje" 
+      />
+    </div>
+
+    <!-- Diseño para pantallas pequeñas (móviles) -->
+    <div class="lg:hidden overflow-x-auto py-4">
+      <div class="flex gap-4">
+        <InsuranceCard 
+          title="Health insurance" 
+          imgSrc="/public/Assets/medicare-icon.png" 
+          imgAlt="Seguro de Auto" 
+        />
+        <InsuranceCard 
+          title="Medicare supplement" 
+          imgSrc="/public/Assets/medicare-advantage-icon.png" 
+          imgAlt="Seguro de Hogar" 
+        />
+        <InsuranceCard 
+          title="Medicare Advantage" 
+          imgSrc="/public/Assets/medicare-icon.png" 
+          imgAlt="Seguro de Vida" 
+        />
+        <InsuranceCard 
+          title="Life insurance" 
+          imgSrc="/public/Assets/life-insurance-icon.png" 
+          imgAlt="Seguro de Salud" 
+        />
+        <InsuranceCard 
+          title="ACA obamacare" 
+          imgSrc="/public/Assets/obamacare-icon.png" 
+          imgAlt="Seguro de Viaje" 
+        />
+      </div>
+    </div>
+  </div>

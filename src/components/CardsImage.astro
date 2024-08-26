@@ -1,0 +1,22 @@
+---
+export interface Props {
+  imgSrc: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+const { imgSrc, title, description, buttonText, buttonLink } = Astro.props;
+---
+
+<div class="rounded-lg overflow-hidden px-4 sm:px-4 md:px-6 lg:px-8">
+  <img src={imgSrc} alt={title} class="w-full h-48 sm:h-56 object-cover" />
+  <div class="p-4 sm:p-4">
+    <h2 class="text-base sm:text-sm md:text-base font-semibold text-gray-800">{title}</h2>
+    <p class="text-xs sm:text-sm md:text-base text-gray-500 font-semibold mt-2 sm:mt-2">{description}</p>
+    <a href={buttonLink} class="text-blue-500 font-semibold hover:underline mt-2 text-xs sm:text-sm">
+      {buttonText} →
+    </a>
+  </div>
+</div>
